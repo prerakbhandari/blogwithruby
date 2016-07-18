@@ -16,7 +16,7 @@ development:
   encoding: unicode
   database: blog
   username: prerakb
-  password: Elanco@123
+  password: Elanco@45
   pool: 5
   host: localhost
 
