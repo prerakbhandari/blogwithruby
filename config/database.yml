@@ -15,7 +15,7 @@ development:
   adapter: postgresql
   encoding: unicode
   #database: blog
-  database: d1hekotp3d5cn3123
+  database: d1hekotp3d5cn3
   #username: prerakb
   username: puyzayxnplxevp
   #password: Elanco@123
