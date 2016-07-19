@@ -17,9 +17,9 @@ development:
   #database: blog
   database: d6avegosvnb132
   #username: prerakb
-  username: colxkmnpgnakkv
+  username: colxkmnpgnakkv11
   #password: Elanco@123
-  password: w3bP8qQ9pftcEdS5HOtO6kDbhU
+  password: w3bP8qQ9pftcEdS5HOtO6kDbhU11
   #pool: 5
   pool: 5432
   host: ec2-54-235-217-221.compute-1.amazonaws.com
