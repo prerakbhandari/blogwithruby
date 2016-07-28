@@ -1,0 +1,22 @@
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Initial</th>
+<th>Surname</th>
+<th>Email</th>
+<th>Mobile</th>
+<th>Error</th>
+</tr>
+<% @errors.each do |error| %>
+<tr>
+<td><%=error.id %></td>
+<td><%=error.Title %></td>
+<td><%=error.Initial %></td>
+<td><%=error.Surname %></td>
+<td><%=error.Email %></td>
+<td><%=error.Mobile %></td>
+<td><%=error.Error %></td>
+</tr>
+<%end%>
+</table>

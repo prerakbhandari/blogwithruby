@@ -1,0 +1,2 @@
+class SampleError < ApplicationRecord
+end

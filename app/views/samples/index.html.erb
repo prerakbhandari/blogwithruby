@@ -1,0 +1,35 @@
+<h2>Import Samples</h2>
+<p>Download:
+<%= link_to "Excel", samples_path(format:"xls") %>
+</p>
+<table id="samples">
+<tr>
+	<td>Id
+	</td>
+	<td>Title
+	</td>
+	<td>Initial
+	</td>
+	<td>Surname
+	</td>
+	<td>Email
+	</td>
+	<td>Mobile
+	</td>
+</tr>
+<% @samples.each do |sample| %>
+<tr>
+	<td><%=sample.id %></td>
+	<td><%=sample.Title %></td>
+	<td><%=sample.Initial %></td>
+	<td><%=sample.Surname %></td>
+	<td><%=sample.Email %></td>
+	<td><%=sample.Mobile %></td>
+</tr>
+<%end%>
+</table>
+
+<%= form_tag import_samples_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
