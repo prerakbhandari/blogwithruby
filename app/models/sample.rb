@@ -5,15 +5,13 @@ class Sample < ApplicationRecord
 
 	def self.import(file)
 	  spreadsheet = open_spreadsheet(file)
-	  header1 = spreadsheet.row(1)
-	  #p "headerssssssssssssssssssssssss"
-	  #p header1
+	  headerrow = spreadsheet.row(1)
 	  headers = Hash.new
 	  spreadsheet.row(1).each_with_index {|header,i| headers[header] = i}
-	  #p header
+	 
 	 
 	  (2..spreadsheet.last_row).each do |i|
-	    row = Hash[[header1, spreadsheet.row(i)].transpose]
+	    row = Hash[[headerrow, spreadsheet.row(i)].transpose]
 	    sample = find_by_id(row["id"]) || new
 	    title = spreadsheet.row(i)[headers['Title']] 
 	    initial = spreadsheet.row(i)[headers['Initial']]
@@ -40,28 +38,6 @@ class Sample < ApplicationRecord
 	    	sample.attributes = row.to_hash.slice(*row.to_hash.keys)
 	    	sample.save!
 	    end
-
-	    	#p @error.Title
-	    	
-
-
-	    #p 'EMAILLLLLLLLLLLLLLLLLLLLLLLLL'
-	    #p isValid
-	    #p sample.title 
-		#email = row.to_hash.slice('Email')
-	    #sample.attributes = row.to_hash.slice(*accessible_attributes)
-	    #title = row(i)[header['Title']]
-	    #initial = find_by_id(row["Title"])
-	    #surname = find_by_id(row["surname"])
-	    #email =  find_by_id(row["email"])
-	    #mobile =  find_by_id(row["mobile"])
-	    #p "Row: #{title}"
-	    
-	     #p "Sampleeeeeeeeeeeeeee"
-	    #p sample.attributes
-	    
-	    #p sample.attributes
-
 	    
 	  end
 	end
